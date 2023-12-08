@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="433635a6-be08-4d72-a658-6d391bad604e" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hello-worldFlow" doc:id="abf8642a-3b57-4f71-ad6b-1b78a13613a4" >
+		<http:listener doc:name="Listener" doc:id="110b0c33-ea7e-4848-9abc-f8f255a08935" config-ref="HTTP_Listener_config" path="/santhu"/>
+		<set-payload value="howww" doc:name="Set Payload" doc:id="1eefd4aa-0596-4b29-9423-379ee2804cd7" />
+	</flow>
+</mule>
